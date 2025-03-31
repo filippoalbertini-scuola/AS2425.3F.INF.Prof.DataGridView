@@ -63,8 +63,49 @@ namespace AS2425._3F.INF.Prof.DataGridView
 
         private void btnVisualizzaMatrice_Click(object sender, EventArgs e)
         {
-
+            visualizzaValoriDataGridView();
         }
 
+        /// <summary>
+        /// Visualizza i valori della matrice in griglia
+        /// </summary>
+        private void visualizzaValoriDataGridView()
+        {
+            // azzera la griglia (righe 0 e colonne 0)
+            dgvValori.Rows.Clear();
+            dgvValori.Columns.Clear();
+
+            // crea le colonne
+            for (int col = 0; col < n_righeColonne; col++)
+            {
+                dgvValori.Columns.Add(col.ToString(), col.ToString());
+            }
+
+            // crea le righe
+            dgvValori.Rows.Add(n_righeColonne);
+
+            // imposta le dimensioni
+            for (int i = 0; i < n_righeColonne; i++)
+            {
+                dgvValori.Columns[i].Width = 35;
+                dgvValori.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+
+            for (int i = 0; i < n_righeColonne; i++)
+                dgvValori.Rows[i].Height = 25;
+
+            // disabilita l'ultima riga per l'inserimento di dati
+            dgvValori.AllowUserToAddRows = false;
+            // disabilita la possibilità di cancellare righe
+            dgvValori.AllowUserToDeleteRows = false;
+            // disabilità la possibilità di modificare i contenuti delle celle
+            dgvValori.ReadOnly = true;
+
+            // visualizza i valori della matrice
+            for (int row = 0; row < n_righeColonne; row++)
+                for (int col = 0; col < n_righeColonne; col++)
+                    // visualizzalo nella DataGridView
+                    dgvValori.Rows[row].Cells[col].Value = valori[row, col].ToString();
+        }
     }
 }

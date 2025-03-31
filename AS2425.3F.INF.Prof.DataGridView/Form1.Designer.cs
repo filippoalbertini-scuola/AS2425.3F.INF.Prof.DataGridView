@@ -32,8 +32,8 @@
             btnAssegnaValori = new Button();
             label1 = new Label();
             txtRigheColonne = new TextBox();
-            dgvValori = new System.Windows.Forms.DataGridView();
             btnVisualizzaMatrice = new Button();
+            dgvValori = new System.Windows.Forms.DataGridView();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvValori).BeginInit();
             SuspendLayout();
@@ -76,15 +76,6 @@
             txtRigheColonne.Size = new Size(72, 27);
             txtRigheColonne.TabIndex = 0;
             // 
-            // dgvValori
-            // 
-            dgvValori.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvValori.Location = new Point(35, 194);
-            dgvValori.Name = "dgvValori";
-            dgvValori.RowHeadersWidth = 51;
-            dgvValori.Size = new Size(753, 244);
-            dgvValori.TabIndex = 1;
-            // 
             // btnVisualizzaMatrice
             // 
             btnVisualizzaMatrice.Location = new Point(33, 145);
@@ -95,13 +86,22 @@
             btnVisualizzaMatrice.UseVisualStyleBackColor = true;
             btnVisualizzaMatrice.Click += btnVisualizzaMatrice_Click;
             // 
+            // dgvValori
+            // 
+            dgvValori.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvValori.Location = new Point(39, 205);
+            dgvValori.Name = "dgvValori";
+            dgvValori.RowHeadersWidth = 51;
+            dgvValori.Size = new Size(692, 233);
+            dgvValori.TabIndex = 3;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(btnVisualizzaMatrice);
             Controls.Add(dgvValori);
+            Controls.Add(btnVisualizzaMatrice);
             Controls.Add(groupBox1);
             Name = "Form1";
             Text = "Prof;Lab2.11 3F; 31/03/25; Esempio utilizzo DataGridView con matrici";
@@ -117,7 +117,7 @@
         private Button btnAssegnaValori;
         private Label label1;
         private TextBox txtRigheColonne;
-        private System.Windows.Forms.DataGridView dgvValori;
         private Button btnVisualizzaMatrice;
+        private System.Windows.Forms.DataGridView dgvValori;
     }
 }
